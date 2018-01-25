@@ -8,6 +8,7 @@ function result = integral_trapezoid( fun, low_limit, up_limit, no_splits )
 %   no_splits - number of trapezoids.
 
 % integration step
+
 h = (up_limit - low_limit) / no_splits;
 
 result = 0;

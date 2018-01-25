@@ -2,15 +2,16 @@
 clc;
 clear
 close all
-f=@(x) (2 + sin(2*sqrt(x)));
+format long
+fun=@(x) (2*x + cos(2*sqrt(x)));
 b=10;
 a=-10;
-n=0.5;
-h=(b-a)/n;
-A=0;
-while (a<b)
-    A= A+(h/2)*(f(a)+f(a+h));
-    a=a+h;
-end
-fprintf( 'Area given by Trapezoidal Rule = %f',A)
-
+up_limit=b;
+low_limit=a;
+no_splits=200;
+h=(b-a)/no_splits;
+x = linspace(a,b,no_splits);
+tic
+result = integral_trapezoid( fun, low_limit, up_limit, no_splits );
+toc
+fprintf( 'Area given by Trapezoidal Rule = %f',result)
