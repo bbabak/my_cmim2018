@@ -11,7 +11,7 @@ function result = integral_trapezoid( fun, low_limit, up_limit, no_splits )
 
 h = (up_limit - low_limit) / no_splits;
 
-result = 0;
+% result = 0;
 % for i = 1:no_splits
 %     result = result + 0.5*h*( fun(low_limit + (i-1)*h) + ...
 %         fun(low_limit + i*h) );
@@ -21,7 +21,7 @@ result = 0;
 k = 1:no_splits;
 a=low_limit;
 b=up_limit;
-result = result+h*(fun(a)/2+fun(b)/2+sum(fun(a+k*h)));
+result =h*(fun(a)/2+fun(b)/2+sum(fun(a+k*h)));
 
 
 end
