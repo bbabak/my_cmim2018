@@ -9,6 +9,7 @@ a=-10;
 up_limit=b;
 low_limit=a;
 no_splits=200;
+n=no_splits;
 h=(b-a)/no_splits;
 x = linspace(a,b,no_splits);
 tic
