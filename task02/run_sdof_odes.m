@@ -9,7 +9,7 @@ solver=45;
 analysis=2;
 y0=[0.02;0];
 t0=0;
-tinc=0.01;
+tinc=0.002;
 tend=4;
 tspan=t0:tinc:tend;
 k=2e3; 
@@ -40,7 +40,7 @@ end
 toc
 
 plot(T,Y(:,1),'m*-', T, Y(:,2), 'bd:', 'MarkerSize', 2, 'LineWidth', 0.5 );
-title(['Spring-Mass-Damper System of 2nd order ODE: ', ' M = ' num2str(m),...
+title(['Single DOF Spring-Mass-Damper System: ', ' M = ' num2str(m),...
    '[kg]' '; C = ' num2str(c), '[N.s^2/m^2]', '; K = ' num2str(k), '[N/m]']);
 xlabel('time T');
 ylabel('Displacement & Velocity'); grid on;
