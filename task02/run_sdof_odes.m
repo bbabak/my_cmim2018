@@ -6,18 +6,18 @@ clear;
 % Choose MATLAB solver
 
 solver=45;
-analysis=2;
-y0=[0.02;0];
+analysis=3;
+y0=[0.0;0];
 t0=0;
 tinc=0.002;
 tend=4;
 tspan=t0:tinc:tend;
 k=2e3; 
 m=10;
-F=1;
-c=5;
-% omegan=sqrt(k/m);
-omega=5;
+F=2;
+c=0.001;
+omega=sqrt(k/m);
+% omega=5;
 %omegad=omega*sqrt(1-zeta^2);
 RelTol=1e-3;
 AbsTol=1e-6; 

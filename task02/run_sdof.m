@@ -55,10 +55,9 @@ err45=vpa(xn)'-Y1(:,1);
 err15s=vpa(xn)'-Y2(:,1);
 err23s=vpa(xn)'-Y3(:,1);
 err23t=vpa(xn)'-Y4(:,1);
-plot(T1,err45,'m*-', T2, err15s, 'bd:', T3, err23s,'g--', T4, err23t, 'MarkerSize', 2, 'LineWidth', 0.5 );
-legend('err45', 'err15s','err23s','err24t');
-% title(['Single DOF Spring-Mass-Damper System: ', ' M = ' num2str(m),...
-%    '[kg]' '; C = ' num2str(c), '[N.s^2/m^2]', '; K = ' num2str(k), '[N/m]']);
+plot(T1,err45,'m*-', T2, err15s, 'bd:', T3, err23s,'g--', T4, err23t, 'MarkerSize', 2, 'LineWidth', 1 );
+legend('err45', 'err15s','err23s','err23t');
+title('Errors given by MATLAB solvers');
 
 % plot(T,Y(:,1),'m*-', T, Y(:,2), 'bd:', 'MarkerSize', 2, 'LineWidth', 0.5 );
 % title(['Single DOF Spring-Mass-Damper System: ', ' M = ' num2str(m),...
