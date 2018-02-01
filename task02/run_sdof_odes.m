@@ -51,6 +51,4 @@ Acceleration=-(c/m)*Y(:,2)-(k/m)*Y(:,1);
 plot(T,Acceleration,'co--', 'MarkerSize', 2, 'LineWidth', 0.5 );
 legend('Acceleration','velocity', 'Displcement');
 hold off;
-% plot(T,Y(:,1),'b');
-% hold on;
-% plot(t,u(:,1),'r*--', t, u(:,2), 'bd:', 'MarkerSize', 2, 'LineWidth', 0.5);
+
