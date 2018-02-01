@@ -7,7 +7,7 @@ clear;
 
 solver=45;
 analysis=3;
-y0=[0.0;0];
+y0=[0.00;0];
 t0=0;
 tinc=0.002;
 tend=4;
@@ -15,14 +15,14 @@ tspan=t0:tinc:tend;
 k=2e3; 
 m=10;
 F=2;
-c=0.001;
-omega=sqrt(k/m);
-% omega=5;
+c=5;
+% omega=sqrt(k/m);
+omega=20;
 %omegad=omega*sqrt(1-zeta^2);
 RelTol=1e-3;
 AbsTol=1e-6; 
 tic
-options = odeset('AbsTol',AbsTol,'RelTol',RelTol,'OutputFcn',@ OutputFcn,'Stats','on');
+options = odeset('AbsTol',AbsTol,'RelTol',RelTol,'Refine' ,'on','OutputFcn',@ OutputFcn,'Stats','on');
 % [T,Y]=ode45(@(t,y) sdof(F,m,k,omega,c,t,y,analysis),tspan,y0,options);
 if solver == 45
     display('Integrator: ode45 (Matlab), options:')
@@ -42,14 +42,14 @@ toc
 plot(T,Y(:,1),'m*-', T, Y(:,2), 'bd:', 'MarkerSize', 2, 'LineWidth', 0.5 );
 title(['Single DOF Spring-Mass-Damper System: ', ' M = ' num2str(m),...
    '[kg]' '; C = ' num2str(c), '[N.s^2/m^2]', '; K = ' num2str(k), '[N/m]']);
-xlabel('time T');
+xlabel('time');
 ylabel('Displacement & Velocity'); grid on;
 axis tight;
 
 hold on;
 Acceleration=-(c/m)*Y(:,2)-(k/m)*Y(:,1);
 plot(T,Acceleration,'co--', 'MarkerSize', 2, 'LineWidth', 0.5 );
-legend('Displacement', 'Velocity', 'Acceleration');
+legend('Acceleration','velocity', 'Displcement');
 hold off;
 % plot(T,Y(:,1),'b');
 % hold on;
