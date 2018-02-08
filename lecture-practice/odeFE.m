@@ -8,5 +8,5 @@ y=zeros(length(y0),length(t));
 y(:,0)=y0(:);
 
 for i=2:n
-    y(:,i)=y(:,i-1)+dt+fun(T(i-1),y(:,i-1))
+    y(:,i)=y(:,i-1)+dt+fun(t(i-1),y(:,i-1))
 end
