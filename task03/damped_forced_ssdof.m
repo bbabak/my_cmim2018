@@ -28,7 +28,9 @@ for zeta=0:0.125:1.125
     i=i+1;
 M(i)=f/sqrt(((1-(OMEGA*t/omega)^2).^2+(2*zeta(1,:)*(OMEGA*t/omega).^2)));
 end
-fplot(subs(M, [OMEGA,f,omega], [3,2,3]), [0, 5],'LineWidth', 1.0)
+pdat=subs(M, [OMEGA,f,omega], [3,2,3]);
+runplot(pdat)
+
 hold on
 
 grid on
